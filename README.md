@@ -1,11 +1,11 @@
-# Shinyfit: Fully-featured multivariable regression on your browser via Shiny
+# Shinyfit - Vascular: Fully-featured multivariable regression on your browser via Shiny
 
 <!-- wp:paragraph -->
-<p>Many of our projects involve getting doctors, nurses, and medical students to collect data on the patients they are looking after. We want to involve many of them in data analysis, without the requirement for coding experience or access to statistical software. To achieve this we have built Shinyfit, a shiny app for linear, logistic, and Cox PH regression. </p>
+<p>The Society for Vascular Surgery Vascular Quality Initiative (VQI) has robust, granular data on vascular surgery procedured performed across the US and world.  This data has great potential for developing models to better understand the interplay between perioperative variables and outcomes in the vascular patient.  Many groups are performing these analyses, however they are often laborious and duplicative.  This platform is designed to streamline and improve throughput for regression analyses of the VQI datasets.  This webapp was initially developed by Surgical Informatics group and Professor Ewen Harrison at the University of Edinburgh and has been adapted for the VQI data set. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><li>Aim: allow access to model fitting without requirement for statistical software or coding experience.</li><li>Audience: Those sharing datasets in context of collaborative research or teaching.</li><li>Hosting requirements: Basic R coding skills including <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> to prepare dataset (5-10 minutes).</li><li>Deployment: Any shiny platform, <a href="http://www.shinyapps.io/">shinyapps.io</a>, <a href="https://www.rstudio.com/products/shiny/shiny-server/">ShinyServer</a>, <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> etc. </li></ul>
+<ul><li>Aim: allow access to model fitting without requirement for statistical software or coding experience.</li><li>Audience: Participating members in VQI.</li><li>Hosting requirements: Basic R coding skills including <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> to prepare dataset (5-10 minutes).</li><li>Deployment: Any shiny platform, <a href="http://www.shinyapps.io/">shinyapps.io</a>, <a href="https://www.rstudio.com/products/shiny/shiny-server/">ShinyServer</a>, <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> etc. </li></ul>
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
@@ -21,7 +21,7 @@
 <!-- /wp:list -->
 
 <!-- wp:heading -->
-<h2>Examples</h2>
+<h2>Examples of Shinyfit in other datasets</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -33,7 +33,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="http://github.com/ewenharrison/shinyfit">github.com/ewenharrison/shinyfit</a></p>
+<p><a href="https://github.com/adam-mdmph/shinyfit-vascular">github.com/adam-mdmph/shinyfit-vascular</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
