@@ -12,14 +12,27 @@ library(forcats)
 
 # colon_s example
 # Read data to "alldata"
-alldata = finalfit::colon_s
+# alldata = finalfit::colon_s
+
+# Read raw VQI data.  Clean variables and select dataset with cleaned variables
+STF2 = read.csv("../../AVACCESS_VSGGNY_20190801/PVI_International_20191104/PVI_International_PROC_r12_1_22_20191104.csv")
+source('scripts/PVI_Proc Variable Cleanup.R')
+dems = c("AGE", "GENDER", "ETHNICITY", "RACE", "LIVINGSTATUS")
+# comorb = c("BMIclass", "PREOP_FUNCSTATUS", "PREOP_AMBUL", "PRIOR_CAD", "COPD", "PREOP_DIABETES", "DIALYSIS", 
+# 					 "HTN", "PREOP_SMOKING")
+# vasc = c("INDICATION", "CALC_FP", "TASC_FP", "RUNOFF_EXP", "ISR_FP")
+# proc = c("SURGYEAR", "URGENCY", "SETTING", "TXTYPE_ATH", "TXTYPE_BAIL", "TXTYPE_NA", "TXTYPE_STENTGRAFT", 
+# 				 "TXTYPE_STENT", "TXTYPE_PTA", "EXPOSURE")
+outcomes = c("DEAD", "OVERALLOUTCOME")
+myvars = c(dems, outcomes)
+alldata = STF[myvars]
 
 # Display variable names
 names(alldata)
 
 # Select subset of variables to keep
-alldata = alldata %>% 
-	dplyr::select(8:9, 14:23, 25, 27, 29, 32)
+# alldata = alldata %>% 
+# 	dplyr::select(8:9, 14:23, 25, 27, 29, 32)
 
 # View dataset
 ff_glimpse(alldata)
@@ -46,13 +59,13 @@ names(alldata_names) = extract_variable_label(alldata)
 matrix(alldata_names)
 
 # Choose how to arrange the above list (order respected):
-alldata_names_list = list(Outcomes = alldata_names[c(15, 2, 3)],
-													Explanatory = alldata_names[c(13, 4:12, 1, 14)],
-													Groups = alldata_names[16]
+alldata_names_list = list(Outcomes = alldata_names[c(6, 7)],
+													Explanatory = alldata_names[c(1:5)],
+													Groups = alldata_names[2]
 )
 
 # Remove outcomes from explanatory list
-alldata_names_list_explanatory = alldata_names_list[-1]
+alldata_names_list_explanatory = alldata_names_list[-c(6, 7)]
 
 # Create lookup table of names
 alldata_names_lookup = extract_labels(alldata)
@@ -69,15 +82,15 @@ rm(alldata_subset)
 matrix(alldata_subset_names)
 
 # Choose how to arrange the above list:
-alldata_subset_names_list = list(Outcomes = alldata_subset_names[c(12)],
-																	Explanatory = alldata_subset_names[c(10,1,2:9)],
-																	Groups = alldata_subset_names[13]
+alldata_subset_names_list = list(Outcomes = alldata_subset_names[c(5, 6)],
+																	Explanatory = alldata_subset_names[c(1:4)],
+																	Groups = alldata_subset_names[1]
 )
 rm(alldata_subset_names)
 
 # Name project
-shinyfit_name = "Colon dataset"
-dataset_label = "colon_s"
+shinyfit_name = "PVI dataset"
+dataset_label = "pvi_s"
 
 # Make final list for app
 alldata_list = list(alldata=alldata,
