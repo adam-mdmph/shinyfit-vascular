@@ -1,7 +1,7 @@
-# Shinyfit
-## Shiny front end for finalfit
-## Ewen Harrison
-## First version: Nov 2018
+# Shinyfit - Vascular
+## Shiny front end for finalfit, applied to VQI dataset
+## Developed by Ewen Harrison, modified by Adam Johnson
+## First version: Dec 2021
 
 # Packages
 library(shiny)
